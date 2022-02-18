@@ -24,6 +24,10 @@ a {
 body {
   font-family: Arial, sans-serif;
   color: #000000;
+  background-image: url(../img/bg.png);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 ul {
@@ -176,7 +180,7 @@ ul {
     left: 78px;
     top: 0;
     box-shadow: inset -1px 0px 0px #E7E7E7, inset 1px 0px 0px #E7E7E7;
-
+    background-color: #fff;
     &__list {
       display: flex;
       flex-wrap: wrap;
