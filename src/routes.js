@@ -7,7 +7,6 @@ Vue.use(Router)
 
 // pages
 import Home from "@/pages/Home";
-import NotFound from "@/pages/404";
 
 // Routering
 const router = new Router({
@@ -17,11 +16,6 @@ const router = new Router({
             path: "/",
             name: "Home",
             component: Home
-        },
-        {
-            path: "*",
-            name: "NotFound",
-            component: NotFound
         }
     ]
 
