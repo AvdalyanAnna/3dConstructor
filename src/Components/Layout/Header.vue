@@ -69,6 +69,114 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss" scoped>
+
+
+
+.header {
+  background: #FFFFFF;
+  box-shadow: -1px 0px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  width: 100%;
+  align-items: center;
+  justify-content: space-between;
+  position: fixed;
+  top: 0;
+  left: 0;
+
+  &-burger {
+    display: flex;
+    align-items: center;
+    padding: 0 34px;
+  }
+
+  &-logo {
+    margin-left: 10px;
+
+    span {
+      max-width: 83px;
+      width: 100%;
+      display: inline-block;
+      font-size: 10px;
+      line-height: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  &-contact {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 18px;
+    margin: 0 0 5px 8%;
+
+    .info {
+      font-size: 14px;
+      line-height: 16px;
+      text-decoration-line: underline;
+      color: #000000;
+      opacity: 0.54;
+      margin: 5px 0;
+    }
+  }
+
+  &-search {
+    flex: 1;
+
+    input {
+      width: 100%;
+      border: none;
+      text-align: center;
+      outline: none;
+    }
+  }
+
+  &-info {
+    &__list {
+      display: flex;
+      align-items: center;
+
+    }
+
+    &__item {
+      font-size: 14px;
+      line-height: 16px;
+      color: rgba(#000000, 0.54);
+      margin: 0;
+      padding: 18px 20px;
+      border-right: 1px solid #E7E7E7;
+
+      a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      &:nth-last-child(1) {
+        border-right: none;
+      }
+
+      b {
+        margin-left: 5px;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 23px;
+      }
+
+      svg {
+        margin-right: 5px;
+
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .header-contact {
+    margin: 0 5px 5px 15px;
+  }
+  .header-info__item {
+    padding: 18px 7px;
+  }
+}
 
 </style>

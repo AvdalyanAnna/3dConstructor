@@ -6,10 +6,17 @@
           <img :src="require(`@/assets/img/menu/${item.img}`)" alt="">
           {{ item.title }}
         </router-link>
+
+
         <transition v-if="item.show" name="fade">
           <div class="nav-content">
             <ul class="nav-bar__list">
-              <li class="nav-bar__item">Главная</li>
+              <li class="nav-bar__item">Главная
+                <svg width="5" height="8" viewBox="0 0 5 8" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <path fill-rule="evenodd" clip-rule="evenodd"
+                        d="M0 0.933333L0.941722 0L4.97767 4L0.941722 8L0 7.06667L3.09423 4L0 0.933333Z" fill="#757575"/>
+                </svg>
+              </li>
               <li class="nav-bar__item nav-bar__item-active ">{{ item.title }}</li>
             </ul>
 
@@ -146,3 +153,144 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+ul {
+  padding: 0;
+  list-style: none;
+}
+
+.nav {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  background: #FFFFFF;
+  box-shadow: 1px 0 4px rgba(0, 0, 0, 0.1);
+  width: 78px;
+
+  &__list {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  &__item {
+    font-size: 13px;
+    line-height: 15px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    padding: 15px 13px;
+    border-bottom: 1px solid #E7E7E7;
+
+    &:nth-last-child(1) {
+      border-bottom: 0;
+    }
+
+    svg, img {
+      margin-bottom: 5px;
+    }
+  }
+
+  &__link {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 60px;
+  }
+
+  &-content {
+    position: absolute;
+    width: 377px;
+    height: 100%;
+    left: 78px;
+    top: 0;
+    box-shadow: inset -1px 0px 0px #E7E7E7, inset 1px 0px 0px #E7E7E7;
+    background-color: #fff;
+
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      text-align: left;
+    }
+
+    &__item {
+      font-size: 13px;
+      line-height: 15px;
+      width: 50%;
+      padding: 10px;
+      box-sizing: border-box;
+
+      svg {
+        width: 53px;
+      }
+    }
+
+    &__link {
+      display: flex;
+      align-items: center;
+    }
+  }
+
+  &-bar {
+    &__list {
+      border-bottom: 1px solid #E7E7E7;
+      display: flex;
+      align-items: center;
+      padding: 12px 0 10px;
+    }
+
+    &__item {
+      font-size: 12px;
+      line-height: 14px;
+      color: #757575;
+      margin: 0 7px;
+      position: relative;
+      padding-right: 15px;
+      display: flex;
+      align-items: center;
+
+      svg {
+        position: absolute;
+        width: 5px;
+        height: 8px;
+        right: 0;
+      }
+
+      &:nth-last-child(1) {
+        &::before {
+          content: unset;
+        }
+      }
+
+      &-active {
+        font-size: 12px;
+        line-height: 14px;
+        color: #000000;
+        margin: 0 7px;
+      }
+    }
+  }
+
+  &-search {
+    margin: 10px;
+
+    input {
+      width: 100%;
+      padding: 10px 14px;
+      border: 1px solid #E7E7E7;
+      box-sizing: border-box;
+      border-radius: 3px;
+      font-size: 14px;
+      line-height: 16px;
+    }
+  }
+}
+
+</style>
